@@ -12,27 +12,24 @@
                 <div class="grid grid-cols-2 gap-3">
                     <x-form.input placeholder="Name"></x-form.input>
                     <x-form.input placeholder="Phone" type="tel"></x-form.input>
-                     <x-form.select class="">
-                         <option value="" disabled selected>Select State</option>
-                         <option value="e">test</option>
+
+                     <x-form.select class="algeria_states">
+                        <option value="" disabled selected>Select State</option>
                      </x-form.select>
-                     <x-form.select class="">
+
+                     <x-form.select class="algeria_cities">
                          <option value="" disabled selected>Select City</option>
-                         <option value="e">test</option>
                      </x-form.select>
                 </div>
                 <div class="mt-5 space-y-2 ">
-                    <x-product.offer :checked="true" :product="$product">
-                        عند طلب 1
-                        عند طلب 1
-                        عند طلب 1
-                     </x-product.offer>
-                     <x-product.offer :product="$product">
-                        عند طلب 2
-                     </x-product.offer>
-                     <x-product.offer :product="$product">
-                        عند طلب 3
-                     </x-product.offer>
+                   
+                    <?php $checked=true; ?>
+                    @foreach ($product->offers as $offer)
+                        <x-product.offer :offer="$offer" :checked="$checked" :product="$offer">
+                        </x-product.offer>
+                     <?php $checked=false; ?>
+                    @endforeach
+                
                 </div>
                 <div class="mt-5">
                     <x-product.add-to-cart-button class="w-full bg-white"></x-product.add-to-cart-button>
