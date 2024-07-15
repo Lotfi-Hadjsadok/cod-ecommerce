@@ -1,0 +1,1 @@
+<button {{$attributes->merge(["class"=>"ring-1 transition-colors hover:bg-primary hover:text-gray-200 w-[90%] mx-auto ring-primary  duration-200 transition-all text-primary  rounded-md flex items-center justify-center h-10 p-0"])}}  >Buy Now</button>
